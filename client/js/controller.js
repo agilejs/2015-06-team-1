@@ -34,8 +34,12 @@
                 $location.path('/movies/new');
             };
             $scope.sort = function(orderingAttribute){
-                $scope.orderingAttribute = orderingAttribute;
-                $scope.reverse=!$scope.reverse;
+                if ($scope.orderingAttribute !== orderingAttribute) {
+                    $scope.orderingAttribute = orderingAttribute;
+                    $scope.reverse = false;
+                } else {
+                    $scope.reverse=!$scope.reverse;
+                }
             };
         }
     );
