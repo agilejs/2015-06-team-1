@@ -1,5 +1,5 @@
 angular
-.module('MovieDatabase', ['ngRoute', 'filters'])
+.module('MovieDatabase', ['ngRoute', 'filters', 'textAngular'])
 .config(function ($routeProvider, $locationProvider, $httpProvider, $provide) {
     'use strict';
 
