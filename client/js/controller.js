@@ -12,15 +12,16 @@
                 return false;
             }
         };
+        $scope.sort = function(orderingAttribute){
+            $scope.orderingAttribute = orderingAttribute
+            $scope.reverse=!$scope.reverse;
+        };
     });
 
     app.controller('WelcomeController',
         function($scope, $location, movieList) {
         $scope.reverse = true;
         $scope.movies = movieList.data;
-        $scope.sort = function(){
-            $scope.reverse=!$scope.reverse;
-        };
     });
 
 
