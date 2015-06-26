@@ -7,7 +7,10 @@
         $scope.title = 'The Movie Database';
     });
 
-    app.controller('WelcomeController', function() {
+    app.controller('WelcomeController',
+        function($scope, $location, movieList) {
+
+        $scope.movies = movieList.data;
     });
 
     app.controller('MoviesListController',
