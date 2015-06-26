@@ -1,16 +1,12 @@
 angular
-.module('MovieDatabase', ['ngRoute'])
+.module('MovieDatabase', ['ngRoute', 'filters'])
 .config(function ($routeProvider, $locationProvider, $httpProvider, $provide) {
     'use strict';
 
     $routeProvider
     .when('/', {
         controller: 'WelcomeController',
-        resolve: {
-            movieList: function(MovieService) {
-                return MovieService.loadList();
-            },
-        },
+
         templateUrl: '/partial/index.html'
     })
     .when('/movies', {

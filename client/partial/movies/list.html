@@ -8,6 +8,7 @@
     <thead>
         <tr>
             <th><a href="" ng-click="sort()">Title</a></th>
+            <th><a href="" ng-click="sort()">ReleaseYear</a></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,9 @@
                 <a href="#" ng-href="/movies/{{movie.id}}">
                     {{movie.title}}
                 </a>
+            </td>
+            <td>
+                {{movie.releaseYear | myDefault: 'unknown'}}
             </td>
         </tr>
     </tbody>
