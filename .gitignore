@@ -3,3 +3,4 @@
 /test-results.xml
 node_modules/
 /client/components/
+.idea/
