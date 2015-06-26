@@ -9,17 +9,24 @@
 
     app.controller('WelcomeController',
         function($scope, $location, movieList) {
-
+        $scope.reverse = true;
         $scope.movies = movieList.data;
+        $scope.sort = function(){
+          $scope.reverse=!$scope.reverse;
+        }
     });
+
 
     app.controller('MoviesListController',
         function($scope, $location, movieList) {
-
+        $scope.reverse = true;
         $scope.movies = movieList.data;
         $scope.add = function () {
             $location.path('/movies/new');
         };
+        $scope.sort = function(){
+          $scope.reverse=!$scope.reverse;
+        }
     });
 
     app.controller('MoviesAddController',
@@ -63,5 +70,3 @@
     app.controller('NotFoundController', ProblemController);
     app.controller('ErrorController', ProblemController);
 })();
-
-
