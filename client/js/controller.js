@@ -12,30 +12,33 @@
                 return false;
             }
         };
-        $scope.sort = function(orderingAttribute){
-            $scope.orderingAttribute = orderingAttribute
-            $scope.reverse=!$scope.reverse;
-        };
     });
 
     app.controller('WelcomeController',
         function($scope, $location, movieList) {
         $scope.reverse = true;
         $scope.movies = movieList.data;
+        $scope.sort = function(orderingAttribute){
+            $scope.orderingAttribute = orderingAttribute;
+            $scope.reverse=!$scope.reverse;
+        };
     });
 
 
     app.controller('MoviesListController',
         function($scope, $location, movieList) {
-        $scope.reverse = true;
-        $scope.movies = movieList.data;
-        $scope.add = function () {
-            $location.path('/movies/new');
-        };
-        $scope.sort = function(){
-            $scope.reverse=!$scope.reverse;
-        };
-    });
+            $scope.orderingAttribute = 'title';
+            $scope.reverse = true;
+            $scope.movies = movieList.data;
+            $scope.add = function () {
+                $location.path('/movies/new');
+            };
+            $scope.sort = function(orderingAttribute){
+                $scope.orderingAttribute = orderingAttribute;
+                $scope.reverse=!$scope.reverse;
+            };
+        }
+    );
 
     app.controller('MoviesAddController',
         function($scope, $http, $location) {
