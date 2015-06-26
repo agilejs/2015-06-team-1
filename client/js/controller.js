@@ -19,8 +19,8 @@
         $scope.reverse = true;
         $scope.movies = movieList.data;
         $scope.sort = function(){
-          $scope.reverse=!$scope.reverse;
-        }
+            $scope.reverse=!$scope.reverse;
+        };
     });
 
 
@@ -32,8 +32,8 @@
             $location.path('/movies/new');
         };
         $scope.sort = function(){
-          $scope.reverse=!$scope.reverse;
-        }
+            $scope.reverse=!$scope.reverse;
+        };
     });
 
     app.controller('MoviesAddController',
